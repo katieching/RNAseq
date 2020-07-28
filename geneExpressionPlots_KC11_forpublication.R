@@ -1,5 +1,5 @@
 ###Katie Ching
-###started 2018-11-30, last updated 2020-05-21
+###started 2018-11-30, last updated 2020-07-27
 
 ###MAKING PLOTS OF GENE EXPRESSION FROM SCRNASEQ DATA,
 ###POOLING CELL TYPE DATA TO AVOID OVER-INTERPRETING WITHIN-TYPE TRENDS
@@ -16,7 +16,7 @@
 
 ###SET-UP AND DEFINITIONS
 
-##load the .Rda file in RStudio or use the following:
+##load the .Rda file from Ngai lab in RStudio or use the following:
 ##example code for loading data below; if you have RStudio installed, then you can just drag the .Rda file into RStudio:
 load("C:/Users/Katie/Desktop/oeHBCdiff_lineageData.Rda")
 
@@ -200,6 +200,11 @@ geneDotPlot <- function(gene) {
          code = 3, length = 0.05)
   axis(side=1, CellTypeDecoder[,1], CellTypeDecoder[,3], col.axis = "black", par(las=2))
   #Note: par(las) refers to orientation of axis label. See "?par(las)" for details.
+  
+  print("average expression, left to right:")
+  print(AvgAllCells)
+  print("standard deviation, left to right:")
+  print(CellTypeSD)
   
   
 }
